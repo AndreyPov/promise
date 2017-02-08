@@ -12,6 +12,11 @@ import loadImage from './load-image-promised';
     loadImage('images/cat1.jpg'),
     loadImage('images/cat2.jpg'),
     loadImage('images/cat3.jpg')
-  ]).then((images) => {
+  ])
+  .then((images) => {
+    images.forEach(img => addImg(img.src));
     console.log(images);
-    });
+  })
+  .catch((error) =>{
+    console.log(error);
+  });

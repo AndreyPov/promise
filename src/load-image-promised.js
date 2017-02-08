@@ -9,9 +9,9 @@ function loadImage(url){
     resolve(image);
   };
 
-  image.onerror = function(){
+  image.onerror = function(msg){
     let message = "Couldn't load an image at" + url;
-    reject(new Error(msg));
+    reject(new Error(message));
   };
   image.src = url;
 
